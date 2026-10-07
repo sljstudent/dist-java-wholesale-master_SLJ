@@ -22,7 +22,9 @@ public class OrderDto {
         this.purchaseOrderNumber = order.getPurchaseOrderNumber();
         this.productName = order.getProduct().getName();
         this.terms = order.getTerms();
-        this.shippedDate = order.getShippedDate().toString();
+        this.shippedDate = order.getShippedDate() == null
+                ? null
+                : order.getShippedDate().toString();
         this.productCost = order.getProduct().getCost();
     }
 }
